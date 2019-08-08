@@ -34,5 +34,24 @@ public class LeaveDaoImpl implements LeaveDao {
 		session.update(leave);
 		session.close();
 	}
+	public void deleteLeave(int liv) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		//Transaction tr = session.beginTransaction();
+		Leave leave = (Leave) session.get(Leave.class, liv);
+		session.delete(leave);
+		
+	}
+
+	public void updateLeave(Leave leave) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		//Transaction tr = session.beginTransaction();
+		Leave leave1 = (Leave) session.get(Leave.class, leave.getlId());
+		leave.setLeave_status(leave.getLeave_status());
+		session.update(leave1);
+		
+	}
+
 
 }
