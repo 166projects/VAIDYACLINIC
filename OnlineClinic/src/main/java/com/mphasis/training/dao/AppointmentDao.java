@@ -10,7 +10,7 @@ public interface AppointmentDao {
 	public void insertAppointment(Appointment appointment);
 	public void updateAppointment(Appointment appointment);
 	public List<Appointment> getAppointments();
-	public void deleteAppointment(int aid); 
+	public void deleteAppointment(String aid); 
 }
 
 
