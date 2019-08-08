@@ -39,7 +39,7 @@ public class PatientDaoImpl implements PatientDao {
 
 	}
 
-	public Patient getPatientById(int pid) {
+	public Patient getPatientById(String pid) {
 		Session session = sessionFactory.openSession();
 		System.out.println("Inside Dao");
 		Patient patients = (Patient) session.get(Patient.class, pid);
