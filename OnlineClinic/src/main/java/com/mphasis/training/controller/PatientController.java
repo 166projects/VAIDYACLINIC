@@ -32,22 +32,22 @@ public class PatientController {
 public void updatePatient(@RequestBody Patient patient)
 {
   Patient patient1=patientBo.getPatientById(patient.getpId());
-	if(patient!=null)
- patientBo.updatePatient(patient);
+	if(patient1!=null)
+ patientBo.updatePatient(patient1);
 	else
 	throw new BusinessException("no patient found");
 }
 
 
 
-	@RequestMapping(value = "/patient/{pId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/patients/{pId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Patient getpatientsById(@PathVariable("pId") String pId) {
 
 		return patientBo.getPatientById(pId);
 
 	}
 
-	@RequestMapping(value = "/patient/{firstname}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/patients/{firstname}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Patient getPatientByName(@PathVariable("firstname") String firstname) {
 
 		return (Patient) patientBo.getPatientsByName(firstname);
