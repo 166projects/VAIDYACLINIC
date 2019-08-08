@@ -44,5 +44,39 @@ public class DoctorDaoImpl implements DoctorDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void insertDoctor(Doctor doctor) {
+		Session session = sessionFactory.openSession();
+		//Transaction tr = session.beginTransaction();
+		session.save(doctor);
+		//tr.commit();
+
+	}
+		
+	
+	public void deleteDoctor(int did) {
+		Session session = sessionFactory.openSession();
+		//Transaction tr = session.beginTransaction();
+		Doctor doctor = (Doctor) session.get(Doctor.class, did);
+		session.delete(doctor);
+	//	tr.commit();
+	}
+	
+	public List<Doctor> getDoctors()
+	{
+		Session session = sessionFactory.openSession();
+		System.out.println("Inside Dao");
+		List<Doctor> doctors = session.createCriteria(Doctor.class).list();
+		return doctors;
+
+	}
+	public List<Doctor> getDoctorByClinic(Clinic clinic)
+	{
+		Session session = sessionFactory.openSession();
+		System.out.println("Inside Dao");
+		List<Doctor> doctors = (List<Doctor>) session.get(Doctor.class,clinic.getClinic_name());
+		return doctors;
+
+	}
 		
 }
