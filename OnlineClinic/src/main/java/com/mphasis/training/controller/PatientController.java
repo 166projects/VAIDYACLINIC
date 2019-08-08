@@ -53,5 +53,19 @@ public void updatePatient(@RequestBody Patient patient)
 		return (Patient) patientBo.getPatientsByName(firstname);
 
 	}
+		
+	@RequestMapping(value = "/appointment", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public void insertAppointment(@RequestBody Appointment appointment) {
+	appointmentBo.insertAppointment(appointment);
+}
+	
+	@RequestMapping(value = "/appointment/{aId}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public void deleteAppointment(@PathVariable("aId") String aId) {
+	appointmentBo.deleteAppointment(aId);
+}
+	@RequestMapping(value = "/appointment", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	public void updateAppointment(@RequestBody Appointment appointment) {
+	appointmentBo.updateAppointment(appointment);
+}
 
 }
