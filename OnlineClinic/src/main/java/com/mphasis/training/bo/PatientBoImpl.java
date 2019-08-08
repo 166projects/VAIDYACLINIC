@@ -23,7 +23,7 @@ public class PatientBoImpl implements PatientBo {
 		return patientDao.getPatientsByName(firstname);
 	}
 
-	public Patient getPatientById(int pid) {
+	public Patient getPatientById(String pid) {
 		return patientDao.getPatientById(pid);
 	}
 
