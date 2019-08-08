@@ -67,7 +67,7 @@ public class AppointmentDaoImpl implements AppointmentDao {
 		 * appointments; }
 		 */
 
-	public void deleteAppointment(int aid) {
+	public void deleteAppointment(String aid) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
 		session.delete(aid);
