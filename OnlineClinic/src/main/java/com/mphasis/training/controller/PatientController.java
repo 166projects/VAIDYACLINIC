@@ -33,6 +33,8 @@ public class PatientController {
 	public void updatePatient(@RequestBody Patient patient) {
 			patientBo.updatePatient(patient.getpId());
 		
+	
+		
 	}
 
 //	@RequestMapping(value = "/add/{pId}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
