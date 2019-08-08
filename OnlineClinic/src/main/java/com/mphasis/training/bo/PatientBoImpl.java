@@ -27,7 +27,9 @@ public class PatientBoImpl implements PatientBo {
 		return patientDao.getPatientById(pid);
 	}
 
-	public void updatePatient(String pid) {
+	public void updatePatient(Patient patient) {
+		 patientDao.updatePatient(patient);
+			
 	}
 
 }
