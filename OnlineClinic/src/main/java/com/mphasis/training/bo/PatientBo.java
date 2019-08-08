@@ -7,7 +7,7 @@ public interface PatientBo {
 	public void insertPatient(Patient patient);
 	public void updatePatient(Patient patient);
 	public List<Patient> getPatientsByName(String firstname);
-	public Patient getPatientById(int pid);
+	public Patient getPatientById(String pid);
 	
 }
 
