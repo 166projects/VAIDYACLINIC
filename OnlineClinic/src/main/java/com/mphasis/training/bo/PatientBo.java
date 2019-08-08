@@ -5,7 +5,7 @@ import com.mphasis.training.entities.Patient;
 
 public interface PatientBo {
 	public void insertPatient(Patient patient);
-	public void updatePatient(String pid);
+	public void updatePatient(Patient patient);
 	public List<Patient> getPatientsByName(String firstname);
 	public Patient getPatientById(int pid);
 	
