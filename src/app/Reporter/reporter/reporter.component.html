@@ -1,0 +1,42 @@
+<p>reporter works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Repoter</title>
+<h1 align="center" >Leave List</h1>
+</head>
+<body>
+<table class="table table-striped">
+        
+<tr bordercolor="green">
+<th >Leave ID</th>
+<th>From date</th>
+<th>To Date</th>
+<th>Reason</th>
+<th>Leave Status</th>
+<th>Doctor Id</th>
+<th>Approve/Deny</th>
+</tr>
+
+<tr *ngFor ='let leave of leaveList'>
+        <td>{{leave.lId}}</td>
+        <td>{{leave.fromdate}}</td>
+        <td>{{leave.todate}}</td>
+        <td>{{leave.reason}}</td>
+        <td>{{leave.leave_status}}</td>
+         <td>{{leave.doctor.dId}}</td> 
+<td><input type="button" value="Approve" name="Approve" (click)="approveLeave(leave)" class="btn btn-info">
+<input type="button" value="Deny" name="Deny" class="btn btn-warning">
+
+ </td>
+
+</tr>
+
+<!-- <tr *ngIf="!leaveList || leaveList.length==0">
+        <td colspan="7" style="text-align: center">No leaves to display</td>
+      </tr> -->
+
+</table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<p>admin works!</p>
+
+<body>
+
+    <!-- <select style="width: 15%; margin-right:16px " name="location_name" [(ngModel)]='locationSelected' (ngModelChange)="getClinicByLocation(locationSelected)"
+        required>
+        <option selected disabled [ngValue]="0">Select Location</option>
+        <option *ngFor="let loc of locationList" [ngValue]="loc.location_name">
+            {{loc.location_name}} </option>
+
+    </select>
+    <select style="width: 15%; margin-right:16px " name="clinic_name" [(ngModel)]='clinicSelected' (ngModelChange)="getDoctorByClinic(clinicSelected)"
+        required>
+        <option selected disabled [ngValue]="0">Select Clinic</option>
+        <option *ngFor="let c of clinicList" [ngValue]="c.clinic_name">
+            {{c.clinic_name}} </option>
+    </select>
+
+    <select style="width: 15%; margin-right:16px " name="doctor_name" [(ngModel)]='doctorSelected' required>
+        <option selected disabled [ngValue]="0">Select Doctor</option>
+        <option *ngFor="let doctor of doctorList" [ngValue]="doctor.doctor_name">
+            {{doctor.doctor_name}} </option>
+
+    </select> -->
+
+    <!-- 
+    <select style="width: 15%">
+        <option selected disabled>Doctor</option>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+    <select style="width: 20%">
+        <option selected disabled>Booked Slot</option>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <button class="" type="submit" id="viewappointments" (click)="appointment">View Appointments</button>
+ -->
+    <h2>Appointment</h2>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Appointment Id</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Appointment Status</th>
+                    <th>Disease</th>
+                    <th>Remark</th>
+                    <th>Doctor Id</th>
+                    <th>Patient Id</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let appointment of appointmentList'>
+                    <td>{{appointment.aId}}</td>
+                    <td>{{appointment.appointment_date}}</td>
+                    <td>{{appointment.appointment_time}}</td>
+                    <td>{{appointment.appointment_status}}</td>
+                    <td>{{appointment.disease}}</td>
+                    <td>{{appointment.remark}}</td>
+                    <td>{{appointment.doctor.dId}}</td>
+                    <td>{{appointment.patient.pId}}</td>
+                    <td><input type="button" value="Approve" name="Approve" class="btn btn-info">
+                        <input type="button" value="Deny" name="Deny" class="btn btn-warning">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ul>
+        <li class="nav-item" routerLinkactive="active">
+            <a class="nav-link" routerLink="addmember">addMember</a>
+
+        </li>
+        <li class="nav-item" routerLinkactive="active">
+            <a class="nav-link" routerLink="adddoctor">adddoctor</a>
+        </li>
+    </ul>
+
+</body>
+
+<router-outlet></router-outlet>

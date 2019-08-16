@@ -1,0 +1,59 @@
+<div>
+
+    <form #leaveform=ngForm (ngSubmit)="onSubmit()">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Apply Leave</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="id">DoctorId</label>
+                    <input type="text" id="dId" name="dId" value="dId" class="form-control" [(ngModel)]="dId" />
+                </div>
+
+                <div class="form-group">
+                    <label for="name">From</label>
+                    <input type="text" id="fromdate" name="fromdate" class="form-control" [(ngModel)]="leave.fromdate" />
+                </div>
+
+                <div class="form-group">
+                    <label for="id">To</label>
+                    <input type="text" id="todate" name="todate" class="form-control" [(ngModel)]="leave.todate" />
+                </div>
+
+                <div class="form-group">
+                    <label for="id">Reason</label>
+                    <input type="text" id="reason" name="reason" class="form-control" [(ngModel)]="leave.reason" />
+                </div>
+
+                <div class="panel-footer">
+                    <button class="btn btn-primary" type="submit" id="apply">Apply</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Leave From</th>
+                <th>Leave To</th>
+                <th>Reason</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>17/07/2019</td>
+                <td>19/07/2019</td>
+                <td>Sick</td>
+                <td>Approved</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

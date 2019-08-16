@@ -1,0 +1,125 @@
+<!-- <p>patient works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>patient
+  </title>
+
+</head>
+
+<body>
+
+  
+
+  <select style="width: 15%">
+    <option selected disabled>Doctor</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select>
+  <select style="width: 20%">
+    <option selected disabled>Booked Slot</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+  </select> -->
+
+<!-- <h2>Appointment</h2>
+  <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   <th>Appointment Id</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Appointment Status</th>
+                    <th>Disease</th>
+                    <th>Remark</th>
+                    <th>Doctor Id</th>
+                    <th>Patient Id</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ='let appointment of appointmentList'>
+                    <td>{{appointment.aId}}</td>
+                    <td>{{appointemnt.appointment_date}}</td>
+                    <td>{{appointemnt.appointment_time}}</td>
+                    <td>{{appointemnt.appointment_status}}</td>
+                    <td>{{appointemnt.disease}}</td>
+                    <td>{{appointemnt.remark}}</td>
+                    <td>{{appointemnt.doctor.dId}}</td>
+                    <td>{{appointemnt.patient.pId}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+
+<form #leaveform=ngForm (ngSubmit)="onSubmit()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Book Appointment</h3>
+    </div>
+    <div class="panel-body">
+
+      <select style="width: 15%; margin-right:16px " name="location_name" [(ngModel)]='locationSelected' (ngModelChange)="getClinicByLocation(locationSelected)"
+        required>
+        <option [ngValue]="0">Select Location</option>
+        <option *ngFor="let loc of locationList" [ngValue]="loc.location_name">
+          {{loc.location_name}} </option>
+
+      </select>
+      <select style="width: 15%; margin-right:16px " name="clinic_name" [(ngModel)]='clinicSelected' (ngModelChange)="getDoctorByClinic(clinicSelected)"
+        required>
+        <option [ngValue]="0">Select Clinic</option>
+        <option *ngFor="let c of clinicList" [ngValue]="c.clinic_name">
+          {{c.clinic_name}} </option>
+      </select>
+
+      <select style="width: 15%; margin-right:16px " name="doctor_name" [(ngModel)]='doctorSelected' required>
+        <option [ngValue]="0">Select Doctor</option>
+        <option *ngFor="let doctor of doctorList" [ngValue]="doctor.doctor_name">
+          {{doctor.doctor_name}} </option>
+
+      </select>
+
+      <div class="form-group">
+        <label for="id">Appointment Date</label>
+        <input type="text" id="appointment_date" name="appointment_date" class="form-control" [(ngModel)]="appointment.appointment_date">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Appointment time</label>
+        <input type="text" id="appointment_time" name="appointment_time" class="form-control" [(ngModel)]="appointment.appointment_time"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="id">Disese</label>
+        <input type="text" id="disease" name="disease" class="form-control" [(ngModel)]="appointment.disease" />
+      </div>
+
+      <div class="form-group">
+        <label for="id">Doctor Name</label>
+        <input type="text" id="doctor_name" name="doctor_name" class="form-control" [(ngModel)]="appointment.doctor" value="doctorSelected"
+        />
+      </div>
+      <div class="form-group">
+        <label for="id">Patient Id</label>
+        <input type="text" id="patientId" name="patientId" class="form-control" value="patient" [(ngModel)]="appointment.patient" />
+      </div>
+
+      <div class="panel-footer">
+        <button class="btn btn-primary" type="submit" id="apply">Apply</button>
+
+      </div>
+    </div>
+  </div>
+</form>
+
+<router-outlet></router-outlet>

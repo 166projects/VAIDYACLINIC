@@ -1,0 +1,20 @@
+.mylinks li{
+    float:left;   /* Fit all your links nicely in one line*/
+    margin:0 15px; /* Give them to the left and right a little room to breathe */
+    /* You can adjust the space by modifying the 5px value, */
+    /* the 0 modifies the top/bottom spacing */
+}
+h1{
+    color: white; 
+    font-family: Century Schoolbook; 
+    font-style: italic;
+     font-weight: bold;
+     text-align: center;
+}
+h5{
+    color: white; 
+    font-family: Century Schoolbook; 
+    font-style: italic;
+     font-weight: bold;
+     text-align: center;
+}
